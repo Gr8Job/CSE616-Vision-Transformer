@@ -1,0 +1,12 @@
+Link to saved model as an object:
+https://drive.google.com/drive/folders/1PXo5CTr8wBzbqXa0qVU6txEjW5Yo_Oc-?usp=sharing
+
+ex:
+model_test=tf.keras.models.load_model('/content/drive/MyDrive/ColabModels/Transformer-Model-CIFAR100')
+
+Link to last run model weights & optimizer weights (example of how to load is included in the Vision Transformer noteboot)
+Model Weigh Run12:
+https://drive.google.com/file/d/1-NDc6xWRzm8MF3BlYoyMxeGsGBU11CmA/view?usp=sharing
+
+Optimizer Run12:
+https://drive.google.com/file/d/1-W5O4MrPbkR8b6fC13FFPDa0S-VRW3f1/view?usp=sharing
