@@ -4,7 +4,17 @@ CSE616-Vision-Transformer
  
 1.	Introduction:	
 
-This report explains the experiment steps of the “Vision Transformer Implementation Project” and discusses the obtained results. The architecture is implemented based on [1], [2], [3] and [4]. The model hyper parameters were selected based on [3] and the CLS classification head was implemented based [4]. 
+This report explains the experiment steps of the “Vision Transformer Implementation Project” and discusses the obtained results. The architecture is implemented based on [1], [2], [3] and [4]. The model hyper parameters were selected based on [3] and the CLS classification head was implemented based [4].
+
+The repository includes the following files:
+
+Vision_Transformer.ipynb: This is the model notebook downloaded from colab. You could run in your colab acount. If you wish to load the saved model object or to use the last saved model weights and optimizer status, you will need to download these objects from the file Saved Model and Weights.txt.
+
+Saved Model and Weights.txt: This file has the saved model object, the last saved model weights and the last saved optimizer status.
+
+Transformer_Block_Parameter_Calculations.ipynb: This files illustarates the calculation of the learnable parameters included within the transformer block.
+
+Run_Results.ipynb: This file has all results of the 12 runs.
 
 2.	Dataset Description:
 
