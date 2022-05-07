@@ -100,8 +100,8 @@ This layer implements the transformer block which consists of layer normalizatio
 ![image](https://user-images.githubusercontent.com/19870905/167246488-50368645-5ac6-4928-ba04-50a5ecd6e16a.png)
 
 
-For the multi-head attention layer, it split the input sequence into 4 different sequences (each sequence is a different attention head). Each sequence is used to train 3 Fully connected layers (each is 64 unit width) to implement the learnable Q, K & V linear transformations used in attention calculations. This step adds 4 (number of heads) *3 (Q, K & V linear transformations) *(64*64+64 FC layer with 64 units) leading to 49,920 learnable parameters. 
-After self-attention is calculated for each head, the output of each attention head is concatenated (leading to a vector of 4*64 =256 elements). Finally, that vector is projected back to 64 element size by a new fully connected layer (256*64+64). In total, we will need 49,920+(256*64+64) or 66,368 learnable parameter for each multi-head attention layer. 
+For the multi-head attention layer, it split the input sequence into 4 different sequences (each sequence is a different attention head). Each sequence is used to train 3 Fully connected layers (each is 64 unit width) to implement the learnable Q, K & V linear transformations used in attention calculations. This step adds 4 (number of heads) x 3(Q, K & V linear transformations) x (64x64+64 FC layer with 64 units) leading to 49,920 learnable parameters. 
+After self-attention is calculated for each head, the output of each attention head is concatenated (leading to a vector of 4x64 =256 elements). Finally, that vector is projected back to 64 element size by a new fully connected layer (256x64+64). In total, we will need 49,920+(256x64+64) or 66,368 learnable parameter for each multi-head attention layer. 
 Adding the two dense layers and the normalization layer will lead to 83,200 learnable parameters for each transformer block.
 
 ![image](https://user-images.githubusercontent.com/19870905/167246418-d9214fbb-cf2a-43b0-a5a2-5926a0917455.png)
@@ -110,7 +110,7 @@ Adding the two dense layers and the normalization layer will lead to 83,200 lear
 ### 5.8	Classification Head Layer: 
 
 Finally, a classification head is added consisting of two fully connected layers. Finally, a softmax layer is added with the number of units equal to 100 matching the number of classes. Only the first vector of the sequence (corresponding to the CLS added vector to the sequence) is used for the classification task.
-With the vector size of 64, first dense layer of 2048 units, second dense layer of 1024 units and softmax layer with 100 units, this leaves us with the biggest part of the model of (64*2048+2048 + 2048*1024+1024+1024*100+100) or 2,333,796 learnable parameters.
+With the vector size of 64, first dense layer of 2048 units, second dense layer of 1024 units and softmax layer with 100 units, this leaves us with the biggest part of the model of (64x2048+2048 + 2048x1024+1024+1024x100+100) or 2,333,796 learnable parameters.
 
 ![image](https://user-images.githubusercontent.com/19870905/167246435-52feca37-eb6b-4487-8b3f-0ba8f7f2a166.png)
 
